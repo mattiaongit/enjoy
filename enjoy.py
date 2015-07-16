@@ -37,7 +37,7 @@ class Enjoy:
 
         for _vehicle in vehicles_data:
             vehicle = {
-                '_id': _vehicle['plate'],
+                '_id': _vehicle['car_plate'],
                 'lat': _vehicle['lat'],
                 'lon': _vehicle['lon'],
                 'time': datetime.datetime.now()
