@@ -44,7 +44,7 @@ class Enjoy:
             }
 
             self.vehicles.save(vehicle)
-            _vehicle = self.vehicles.find({'_id': _vehicle['plate']})
+            _vehicle = self.vehicles.find({'_id': _vehicle['car_plate']})
 
             if vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']:
                 print "shift!"
