@@ -23,7 +23,7 @@ class Enjoy:
         backoff = 20
         while response == None:
             try:
-                response = json.loads(requests.get(api['vehicles']).text)
+                response = json.loads(requests.get(self.api['vehicles']).text)
             except Exception:
                 print "Somenthing went wrong with the requests, retrying in {0} seconds.".format(backoff)
                 time.sleep(backoff)
