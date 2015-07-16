@@ -33,7 +33,7 @@ class Enjoy:
         return response
 
     def update(self):
-        vehicles_data = get_vehicles()
+        vehicles_data = self.get_vehicles()
 
         for _vehicle in vehicles_data:
             vehicle = {
