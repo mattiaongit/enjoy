@@ -43,11 +43,9 @@ class Enjoy:
                 'time': datetime.datetime.now()
             }
 
-            pdb.set_trace()
-
 
             self.vehicles.save(vehicle)
-            _vehicle = self.vehicles.find({'_id': _vehicle['car_plate']})
+            _vehicle = self.vehicles.find_one({'_id': _vehicle['car_plate']})
 
             if vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']:
                 print "shift!"
@@ -64,4 +62,5 @@ class Enjoy:
     def observe(self):
         while(True):
             self.update()
+            print "batch analized, going to sleep now"
             time.sleep(5)
