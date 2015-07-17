@@ -34,7 +34,7 @@ class Enjoy:
 
     @staticmethod
     def moved(a_lat, b_lat, a_lon, b_lon):
-        return abs(a_lat,b_lat) > 0.01 or abs(a_lon, b_lon) > 0.01
+        return abs(a_lat - b_lat) > 0.01 or abs(a_lon - b_lon) > 0.01
 
     def update(self):
         vehicles_data = self.get_vehicles()
