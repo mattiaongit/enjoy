@@ -62,7 +62,7 @@ class Enjoy:
 
     @staticmethod
     def moved(a_lat, b_lat, a_lon, b_lon):
-        return abs(a_lat,b_lat) > 0.05 or abs(a_lon, b_lon) > 0.05
+        return abs(a_lat,b_lat) > 0.01 or abs(a_lon, b_lon) > 0.01
 
     def observe(self):
         while(True):
