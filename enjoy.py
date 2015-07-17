@@ -43,9 +43,8 @@ class Enjoy:
                 'time': datetime.datetime.now()
             }
 
-
-            self.vehicles.save(vehicle)
             _vehicle = self.vehicles.find_one({'_id': _vehicle['car_plate']})
+            self.vehicles.save(vehicle)
 
             if vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']:
                 print "shift!"
@@ -53,8 +52,10 @@ class Enjoy:
                     'plate': vehicle['plate'],
                     'a_lat': _vechile['lat'],
                     'a_lon': _vehicle['lon'],
+                    'a_time': _vehicle['time'],
                     'b_lat': vehicle['lat'],
-                    'b_lon': vehicle['lon']
+                    'b_lon': vehicle['lon'],
+                    'b_lon': vehicle['time']
                 }
 
                 self.shifts.insert(shift)
