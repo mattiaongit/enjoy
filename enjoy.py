@@ -55,7 +55,7 @@ class Enjoy:
                     'a_time': _vehicle['time'],
                     'b_lat': vehicle['lat'],
                     'b_lon': vehicle['lon'],
-                    'b_lon': vehicle['time']
+                    'b_time': vehicle['time']
                 }
 
                 self.shifts.insert(shift)
@@ -64,4 +64,4 @@ class Enjoy:
         while(True):
             self.update()
             print "batch analized, going to sleep now"
-            time.sleep(5)
+            time.sleep(15)
