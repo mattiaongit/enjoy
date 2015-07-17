@@ -50,7 +50,7 @@ class Enjoy:
             _vehicle = self.vehicles.find_one({'_id': _vehicle['car_plate']})
             self.vehicles.save(vehicle)
 
-            if _vehicle and moved(vehicle['lat'], _vehicle['lat'], vehicle['lon'], _vehicle['lon']):
+            if _vehicle and self.moved(vehicle['lat'], _vehicle['lat'], vehicle['lon'], _vehicle['lon']):
                 print "shift!"
                 shift = {
                     'plate': vehicle['_id'],
