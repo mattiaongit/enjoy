@@ -32,6 +32,10 @@ class Enjoy:
 
         return response
 
+    @staticmethod
+    def moved(a_lat, b_lat, a_lon, b_lon):
+        return abs(a_lat,b_lat) > 0.01 or abs(a_lon, b_lon) > 0.01
+
     def update(self):
         vehicles_data = self.get_vehicles()
 
@@ -60,9 +64,7 @@ class Enjoy:
 
                 self.shifts.insert(shift)
 
-    @staticmethod
-    def moved(a_lat, b_lat, a_lon, b_lon):
-        return abs(a_lat,b_lat) > 0.01 or abs(a_lon, b_lon) > 0.01
+
 
     def observe(self):
         while(True):
