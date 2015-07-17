@@ -43,14 +43,11 @@ class Enjoy:
                 'time': datetime.datetime.now()
             }
 
+            pdb.set_trace()
+
+
             self.vehicles.save(vehicle)
             _vehicle = self.vehicles.find({'_id': _vehicle['car_plate']})
-
-
-            pdb.set_trace()
-            print vehicle['lat']
-
-            print _vehicle['lat']
 
             if vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']:
                 print "shift!"
