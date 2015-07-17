@@ -49,7 +49,7 @@ class Enjoy:
             if _vehicle and (vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']):
                 print "shift!"
                 shift = {
-                    'plate': vehicle['plate'],
+                    'plate': vehicle['_id'],
                     'a_lat': _vechile['lat'],
                     'a_lon': _vehicle['lon'],
                     'a_time': _vehicle['time'],
