@@ -50,7 +50,7 @@ class Enjoy:
                 print "shift!"
                 shift = {
                     'plate': vehicle['_id'],
-                    'a_lat': _vechile['lat'],
+                    'a_lat': _vehicle['lat'],
                     'a_lon': _vehicle['lon'],
                     'a_time': _vehicle['time'],
                     'b_lat': vehicle['lat'],
