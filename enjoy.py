@@ -46,7 +46,7 @@ class Enjoy:
             _vehicle = self.vehicles.find_one({'_id': _vehicle['car_plate']})
             self.vehicles.save(vehicle)
 
-            if _vehicle and (vehicle['lat'] != _vehicle['lat'] and vehicle['lon'] != _vehicle['lon']):
+            if _vehicle and moved(vehicle['lat'], _vehicle['lat'], vehicle['lon'], _vehicle['lon']):
                 print "shift!"
                 shift = {
                     'plate': vehicle['_id'],
@@ -59,6 +59,10 @@ class Enjoy:
                 }
 
                 self.shifts.insert(shift)
+
+    @staticmethod
+    def moved(a_lat, b_lat, a_lon, b_lon):
+        return abs(a_lat,b_lat) > 0.05 or abs(a_lon, b_lon) > 0.05
 
     def observe(self):
         while(True):
