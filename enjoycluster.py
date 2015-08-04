@@ -14,7 +14,9 @@ def timeFeature(time):
 
 X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']) ] for shift in shifts]
 
-k_means = cluster.KMeans(n_clusters=int(math.sqrt(len(shifts)/2)) *2)
+
+k = 500 #int(math.sqrt(len(shifts)/2)) *2
+k_means = cluster.KMeans(n_clusters=k)
 k_means.fit(preprocessing.normalize(X_shifts, axis=0, copy=False))
 
 
