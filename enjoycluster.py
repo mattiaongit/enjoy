@@ -9,7 +9,7 @@ shifts = list(db['shifts'].find({}))
 def timeFeature(time):
 	midnight = datetime.datetime(time.year, time.month, time.day, 0, 0, 0)
 	delta = time - midnight
-	return delta.seconds
+	return delta.seconds/1000
 
 
 X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']) ] for shift in shifts]
@@ -25,4 +25,6 @@ cluster_labels = json.dumps([int(cluster) for cluster in k_means.labels_])
 f = open('data.js','w')
 f.write('var coords = '+ observation_vectors+';\r\n')
 f.write('var clusters = '+ cluster_labels+';\r\n')
+f.write('var colors = [];\r\n') #TODO generate dinamically k different colors!
+
 f.close()
