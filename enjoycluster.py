@@ -18,10 +18,10 @@ k_means = cluster.KMeans(n_clusters=math.sqrt(len(shifts)/2))
 k_means.fit(X_shifts)
 
 
-observation_vectors = json.dumps([])
+observation_vectors = json.dumps(X_shifts)
 cluster_labels = json.dumps([int(cluster) for cluster in k_means.labels_])
 
-# export data to .js file used for display visualization 
+# export data to .js file used for display visualization
 f = open('data.js','w')
 f.write('var coords = '+ observation_vectors+';\r\n')
 f.write('var clusters = '+ cluster_labels+';\r\n')
