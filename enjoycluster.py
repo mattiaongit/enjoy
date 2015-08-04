@@ -1,5 +1,5 @@
 import pymongo, datetime, json, math
-from sklearn import cluster
+from sklearn import cluster, preprocessing
 
 conn = pymongo.Connection()
 db = conn['enjoy']
@@ -9,13 +9,13 @@ shifts = list(db['shifts'].find({}))
 def timeFeature(time):
 	midnight = datetime.datetime(time.year, time.month, time.day, 0, 0, 0)
 	delta = time - midnight
-	return delta.seconds/1000
+	return delta.seconds
 
 
 X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']) ] for shift in shifts]
 
 k_means = cluster.KMeans(n_clusters=int(math.sqrt(len(shifts)/2)))
-k_means.fit(X_shifts)
+k_means.fit(preprocessing.normalize(X_shifts, axis=0, copy=False))
 
 
 observation_vectors = json.dumps(X_shifts)
