@@ -9,10 +9,14 @@ shifts = list(db['shifts'].find({}))
 def timeFeature(time):
 	midnight = datetime.datetime(time.year, time.month, time.day, 0, 0, 0)
 	delta = time - midnight
-	return delta.seconds / 1000.0
+	return delta.seconds
+
+def travelTimeFeature(shift):
+	delta = shift['b_time'] - shift['a_time']
+	return delta.seconds
 
 
-X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']) ] for shift in shifts]
+X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']), travelTimeFeature(shift)] for shift in shifts]
 
 
 k = 500 #int(math.sqrt(len(shifts)/2)) *2
