@@ -16,8 +16,9 @@ def travelTimeFeature(shift):
 	return delta.seconds
 
 
-X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon'], timeFeature(shift['a_time']), travelTimeFeature(shift)] for shift in shifts]
+X_shifts = [[shift['a_lat'], shift['a_lon'], shift['b_lat'], shift['b_lon']] for shift in shifts]
 
+#time feaures  timeFeature(shift['a_time']),  travelTimeFeature(shift)
 
 k = 3000 #int(math.sqrt(len(shifts)/2)) *2
 k_means = cluster.KMeans(n_clusters=k)
