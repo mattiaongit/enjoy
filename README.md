@@ -1,4 +1,4 @@
 Enjoy - Car sharing routes clusters analysis
 ==================
 
-Tracking movements of car sharing serivice Enjoy, to perform some cluster analysis and spot recurring travel patterns, this could be used to exploit a predictive model and some privacy issue on drivers' behaviours and their habits.
+Tracking movements of car sharing serivice Enjoy, performing some cluster analysis to spot recurring travel patterns, as this could be used to build a predictive model and expose some privacy issue on drivers' behaviours and their habits.
