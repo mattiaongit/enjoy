@@ -6,3 +6,4 @@ Tracking movements of car sharing serivice Enjoy, performing some cluster analys
 Here you can see an animation of cars moving on a map. This sample represent around 3hours of traffic in July 2015
 
 http://mattiadmr.com/enjoy/tracks/
+https://medium.com/@mattiadmr/location-privacy-issues-in-car-sharing-services-a71584a7a94c
